@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Détails du produit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container my-5" id="product-details">
+    <p>Chargement...</p>
+  </div>
+
+  <div class="text-center my-4">
+  <a href="index.html" class="btn btn-outline-secondary">
+    ← Retour à la boutique
+  </a>
+    </div>
+
+  <script>
+    async function loadProductDetails() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      if (!id) {
+        document.getElementById("product-details").innerHTML = "<p class='text-danger'>Produit introuvable.</p>";
+        return;
+      }
+
+      const res = await fetch(`https://dummyjson.com/products/${id}`);
+      const product = await res.json();
+
+      document.getElementById("product-details").innerHTML = `
+        <div class="row">
+          <div class="col-md-6">
+            <img src="${product.thumbnail}" class="img-fluid" alt="${product.title}">
+          </div>
+          <div class="col-md-6">
+            <h2>${product.title}</h2>
+            <p class="text-muted">${product.description}</p>
+            <h4>${product.price} $</h4>
+            <button class="btn btn-primary" onclick="addToCart(${product.id})">Ajouter au panier</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function addToCart(id) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.id === parseInt(id));
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: parseInt(id), qty: 1 });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Produit ajouté au panier !");
+    }
+
+    loadProductDetails();
+  </script>
+</body>
+</html>
