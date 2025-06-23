@@ -1,0 +1,117 @@
+/* Body background and font */
+body {
+  background: linear-gradient(to right, #f0f2f5, #e4ebf3);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+/* Container for login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 20px;
+}
+
+/* Box that holds the login form */
+.login-box {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Profile Icon */
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #0d6efd;
+  padding: 6px;
+}
+
+
+/* Login heading */
+.login-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Message text */
+#message {
+  color: green;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Input groups */
+.input-group {
+  position: relative;
+  margin: 1.2rem 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #0d6efd;
+  outline: none;
+}
+
+/* Input icon */
+.icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  opacity: 0.6;
+}
+
+/* Options: Remember me and forgot password */
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.options a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Login button */
+.btn-container button {
+  width: 100%;
+  padding: 12px;
+  background: #0d6efd;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.btn-container button:hover {
+  background: #0b5ed7;
+}

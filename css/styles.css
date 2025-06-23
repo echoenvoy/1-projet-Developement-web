@@ -7,3 +7,47 @@ body { background: #f7f7f7; }
 .card:hover { transform: translateY(-5px); }
 .card-img-top { height:200px; object-fit:cover; }
 .navbar .badge { font-size: .75rem; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+    margin: 0;
+  padding: 0;
+}
+.navbar-brand{
+  text-transform: uppercase;
+  font-size: xx-large;
+}
+
+header {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.list-group-item.active {
+  background-color: #f0b90b;
+  border-color: #f0b90b;
+}
+
+/* Ensure row behaves as expected */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Optional: fix product item width */
+#product-container > div {
+  flex: 0 0 auto;
+  width: 33.3333%;
+  padding: 10px;
+}
+
+/* Make sure products and sidebar don't stack */
+aside {
+  min-height: 100%;
+}
+
+
+.list-group-item.active {
+  background-color: #f0b90b;
+  border-color: #f0b90b;
+}
